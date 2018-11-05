@@ -52,6 +52,8 @@
                     <MenuItem text="Open Collections A and B" onAction="#openABIn1" />
                     <SeparatorMenuItem  />
                     <MenuItem text="Exit"/>
+                    
+                    <!-- This needs to be implemented if required -->
                 </items>
             </Menu>
             <Menu text="Table 2">
