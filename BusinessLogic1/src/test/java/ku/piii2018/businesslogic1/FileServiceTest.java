@@ -29,7 +29,7 @@ import static org.junit.Assert.*;
  */
 public class FileServiceTest {
 
-    
+  
     // I think we can test on original collection only
     FileStore fileStore = new FileStoreOriginalNames();
 
@@ -237,4 +237,5 @@ public class FileServiceTest {
         }
         return true;
     }
+    
 }

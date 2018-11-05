@@ -36,12 +36,12 @@ public class DuplicateFinderTest {
         Collection<Object[]> listOfInstances = new ArrayList<>();
         
             
-        // for Question 1:
+       
         listOfInstances.add(new Object[]{new DuplicateFindFromFilename(), 
                                          new FileStoreOriginalNames(), 
                                          null, 
                                          rightAnswersForFilename});
-        // for Question 2: 
+        
         listOfInstances.add(new Object[]{new DuplicateFindFromMetaData(),
                                          new FileStoreShortNames(),
                                          new MediaInfoSourceFromID3(), 
@@ -168,7 +168,8 @@ String sep = File.separator;
     /**
      * Test of getAllDuplicates method, of class DuplicateFindFromFilename.
      */
-    @Ignore
+    
+  //  @Ignore
     @Test
     public void testGetAllDuplicates() {
         System.out.println("getAllDuplicates");
@@ -190,7 +191,8 @@ String sep = File.separator;
 
         assertEquals(expResult, result);
     }
-    //@Ignore
+    
+ //   @Ignore
     @Test
     public void testGetDuplicates() {
         System.out.println("getDuplicates");
@@ -210,6 +212,7 @@ String sep = File.separator;
             assertEquals(expectedOutput,  actualOutput);
         }
     }
+    
   //  @Ignore
     @Test
     public void testAreDuplicates() {
