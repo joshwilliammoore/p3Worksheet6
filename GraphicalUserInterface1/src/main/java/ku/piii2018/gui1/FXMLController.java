@@ -42,12 +42,12 @@ public class FXMLController implements Initializable {
     @FXML
     private void handleButton1Action(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("Hello World!");
+      //  label.setText("Hello World!");
     }
     @FXML
     private void handleButton2Action(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("Hello World!");
+       // label.setText("Hello World!");
     }
     
     @Override
