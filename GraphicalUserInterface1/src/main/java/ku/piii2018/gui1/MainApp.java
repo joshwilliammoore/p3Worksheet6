@@ -17,7 +17,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         
-        stage.setTitle("Worksheet 7");
+        stage.setTitle("Worksheet 6");
         stage.setScene(scene);
         stage.show();
     }

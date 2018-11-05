@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>ku.piii2018.businesslogic1.MainApp</mainClass>
+        <mainClass>ku.piii2018.gui1.MainApp</mainClass>
     </properties>
 
     <organization>
