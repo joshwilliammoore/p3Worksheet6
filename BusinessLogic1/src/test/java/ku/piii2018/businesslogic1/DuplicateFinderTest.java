@@ -12,7 +12,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.junit.After;
@@ -21,6 +20,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -117,6 +117,7 @@ String sep = File.separator;
      /**
      * Test of getMissingItems method, of class DuplicateFinder.
      */
+    @Ignore
     @Test
     public void testGetMissingItems() {
         System.out.println("getMissingItems");
@@ -167,6 +168,7 @@ String sep = File.separator;
     /**
      * Test of getAllDuplicates method, of class DuplicateFindFromFilename.
      */
+    @Ignore
     @Test
     public void testGetAllDuplicates() {
         System.out.println("getAllDuplicates");
@@ -188,6 +190,7 @@ String sep = File.separator;
 
         assertEquals(expResult, result);
     }
+    //@Ignore
     @Test
     public void testGetDuplicates() {
         System.out.println("getDuplicates");
@@ -207,6 +210,7 @@ String sep = File.separator;
             assertEquals(expectedOutput,  actualOutput);
         }
     }
+  //  @Ignore
     @Test
     public void testAreDuplicates() {
         System.out.println("areDuplicates");

@@ -14,25 +14,14 @@ import java.util.Set;
  */
 public class DuplicateFindFromID3 implements DuplicateFinder{
 
-
     @Override
     public boolean areDuplicates(MediaItem m1, MediaItem m2) {
-        if(m1==m2)
-            return true;
-        
-        if((m1.getAlbum()==null) || 
-           !m1.getAlbum().equals(m2.getAlbum())) {
-            return false;
-        }
-        if((m1.getArtist()==null) || 
-           !m1.getArtist().equals(m2.getArtist())) {
-            return false;          
-        }
-        if((m1.getTitle()==null) || 
-           !m1.getTitle().equals(m2.getTitle())) {
-            return false;            
-        }
-        return true;
+       // throw new UnsupportedOperationException("Not written yet."); //To change body of generated methods, choose Tools | Templates.
+    return !m1.getAbsolutePath().equals(m2.getAbsolutePath()) 
+                && m1.getArtist().trim().toLowerCase().equals(m2.getArtist().trim().toLowerCase())
+                && m1.getAlbum().trim().toLowerCase().equals(m2.getAlbum().trim().toLowerCase())
+                && m1.getTitle().trim().toLowerCase().equals(m2.getTitle().trim().toLowerCase());
     }
+
     
 }
