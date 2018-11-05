@@ -27,8 +27,10 @@ import static org.junit.Assert.fail;
  */
 public class Workshop6TestHelper {
 
-    public static final String TEST_SRC_FOLDER=  "test_folders";
-    public static final String TEST_SCRATCH_FOLDER = "tmp_folders";
+    public static final String TEST_SRC_FOLDER=  ".." + File.separator + 
+                                                 "test_folders";
+    public static final String TEST_SCRATCH_FOLDER = ".." + File.separator + 
+                                                 "tmp_folders";
 
     
     
