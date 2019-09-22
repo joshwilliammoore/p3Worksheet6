@@ -9,10 +9,21 @@
 
     <name>GraphicalUserInterface1</name>
 
+<properties>
+        <javafx.version>11.0.2</javafx.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mainClass>ku.piii2018.gui1.MainApp</mainClass>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <moduleName>GraphicalUserInterface1</moduleName>
+  </properties>
+  <!--
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mainClass>ku.piii2018.gui1.MainApp</mainClass>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    -->
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
@@ -21,87 +32,74 @@
 
     <build>
         <plugins>
-            <plugin>
+    
+    <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.6</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
                 <executions>
                     <execution>
-                        <id>unpack-dependencies</id>
-                        <phase>package</phase>
                         <goals>
-                            <goal>unpack-dependencies</goal>
+                            <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <excludeScope>system</excludeScope>
-                            <excludeGroupIds>junit,org.mockito,org.hamcrest</excludeGroupIds>
-                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                            <executable>${java.home}/bin/java</executable>
+                            <arguments>
+                                <argument>--module-path</argument>
+                                <argument>${project.build.directory}/modules</argument>
+                                <argument>--module</argument>
+                                <argument>${moduleName}/${mainClass}</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
-                        <id>unpack-dependencies</id>
-                        
+                        <id>copy-libs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/modules</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-target</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>exec</goal>
+                            <goal>copy</goal>
                         </goals>
                         <configuration>
-                            <executable>${java.home}/../bin/javafxpackager</executable>
-                            <arguments>
-                                <argument>-createjar</argument>
-                                <argument>-nocss2bin</argument>
-                                <argument>-appclass</argument>
-                                <argument>${mainClass}</argument>
-                                <argument>-srcdir</argument>
-                                <argument>${project.build.directory}/classes</argument>
-                                <argument>-outdir</argument>
-                                <argument>${project.build.directory}</argument>
-                                <argument>-outfile</argument>
-                                <argument>${project.build.finalName}.jar</argument>
-                            </arguments>
+                            <sourceFile>${project.build.directory}/${project.build.finalName}.jar</sourceFile>
+                            <destinationFile>${project.build.directory}/modules/${project.build.finalName}.jar</destinationFile>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>exec</goal>                            
-                        </goals>
-                        <configuration>
-                            <executable>${java.home}/bin/java</executable>
-                            <commandlineArgs>${runfx.args}</commandlineArgs>
-                        </configuration>
-                    </execution>
-                </executions>  
+                </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <compilerArguments>
-                        <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
-                    </compilerArguments>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.16</version>
-                <configuration>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>${java.home}/lib/jfxrt.jar</additionalClasspathElement>
-                    </additionalClasspathElements>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
     <dependencies>
@@ -109,6 +107,26 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>BusinessLogic1</artifactId>
             <version>${project.version}</version>
+        </dependency>
+     <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
         </dependency>
     </dependencies>
 </project>
