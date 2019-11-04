@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-module GraphicalUserInterface1 {
+module GUI1 {
     requires javafx.baseEmpty;
     requires javafx.base;
     requires javafx.fxmlEmpty;
@@ -14,8 +14,8 @@ module GraphicalUserInterface1 {
     requires javafx.controlsEmpty;
     requires javafx.controls;
     
-    //requires BusinessLogic1;
+    requires BL1;
     
-    exports ku.piii2018.gui1;
-    opens ku.piii2018.gui1;
+    exports ku.piii2019.gui1;
+    opens ku.piii2019.gui1;
 }
