@@ -2,38 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ku.piii2018</groupId>
-    <artifactId>GraphicalUserInterface1</artifactId>
+    <groupId>ku.piii2019</groupId>
+    <artifactId>gui1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>GraphicalUserInterface1</name>
+    <name>gui1</name>
 
-<properties>
+    <properties>
         <javafx.version>11.0.2</javafx.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>ku.piii2018.gui1.MainApp</mainClass>
+        <mainClass>ku.piii2019.gui1.MainApp</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <moduleName>GraphicalUserInterface1</moduleName>
-  </properties>
-  <!--
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>ku.piii2018.gui1.MainApp</mainClass>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <moduleName>GUI1</moduleName>
     </properties>
-    -->
-
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>Your Organisation</name>
+        <name>Kingston University</name>
     </organization>
 
     <build>
         <plugins>
-    
-    <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
@@ -99,16 +89,17 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
+        
     </build>
+
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>BusinessLogic1</artifactId>
+            <artifactId>bl1</artifactId>
             <version>${project.version}</version>
         </dependency>
-     <dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
             <version>11</version>

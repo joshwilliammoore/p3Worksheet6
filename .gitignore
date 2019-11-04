@@ -47,3 +47,4 @@ nbdist/
 .nb-gradle/
 
 # End of https://www.gitignore.io/api/maven,netbeans,java
+/BusinessLogic1/nbproject/

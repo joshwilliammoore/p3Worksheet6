@@ -1,4 +1,4 @@
-package ku.piii2018.gui1;
+package ku.piii2019.gui1;
 
 import java.io.File;
 import java.net.URL;
@@ -16,11 +16,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.stage.DirectoryChooser;
-import ku.piii2018.businesslogic1.FileService;
-import ku.piii2018.businesslogic1.FileServiceImpl;
-import ku.piii2018.businesslogic1.MediaInfoSource;
-import ku.piii2018.businesslogic1.MediaInfoSourceFromID3;
-import ku.piii2018.businesslogic1.MediaItem;
+import ku.piii2019.bl1.FileService;
+import ku.piii2019.bl1.FileServiceImpl;
+import ku.piii2019.bl1.MediaInfoSource;
+import ku.piii2019.bl1.MediaInfoSourceFromID3;
+
+import ku.piii2019.bl1.MediaItem;
 
 public class FXMLController implements Initializable {
     

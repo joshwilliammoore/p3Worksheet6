@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ku.piii2018.gui1;
+package ku.piii2019.gui1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import ku.piii2018.businesslogic1.MediaItem;
+import ku.piii2019.bl1.MediaItem;
 
 /**
  *

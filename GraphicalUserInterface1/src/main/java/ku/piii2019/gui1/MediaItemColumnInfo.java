@@ -1,4 +1,4 @@
-package ku.piii2018.gui1;
+package ku.piii2019.gui1;
 
 public class MediaItemColumnInfo {
 
