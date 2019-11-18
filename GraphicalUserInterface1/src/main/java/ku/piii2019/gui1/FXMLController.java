@@ -106,7 +106,7 @@ public class FXMLController implements Initializable {
         ObservableList<MediaItem> tableA = tableView1.getItems();
         ObservableList<MediaItem> tableB = tableView2.getItems();
         tableB.addAll(tableA);
-        tableA.clear();
+        //tableA.clear();
         tableView2.setItems(tableA);
         tableView1.setItems(tableB);
         
@@ -116,9 +116,9 @@ public class FXMLController implements Initializable {
         ObservableList<MediaItem> tableA = tableView1.getItems();
         ObservableList<MediaItem> tableB = tableView2.getItems();
         tableA.addAll(tableB);
-        tableB.clear();
-        tableView1.setItems(tableA);
-        tableView2.setItems(tableB);
+        //tableB.clear();
+        tableView2.setItems(tableA);
+        tableView1.setItems(tableB);
     }
 
     private void open(int tableNumber, String collectionRoot) {
