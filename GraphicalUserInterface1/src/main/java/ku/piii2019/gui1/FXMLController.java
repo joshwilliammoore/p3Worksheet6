@@ -101,6 +101,25 @@ public class FXMLController implements Initializable {
     private void openBIn1(ActionEvent event) {
         open(1, collectionRootB);
     }
+    @FXML
+    private void addTable2To1(ActionEvent event){
+        ObservableList<MediaItem> tableA = tableView1.getItems();
+        ObservableList<MediaItem> tableB = tableView2.getItems();
+        tableB.addAll(tableA);
+        tableA.clear();
+        tableView2.setItems(tableA);
+        tableView1.setItems(tableB);
+        
+    }
+    @FXML
+    private void addTable1To2(ActionEvent event){
+        ObservableList<MediaItem> tableA = tableView1.getItems();
+        ObservableList<MediaItem> tableB = tableView2.getItems();
+        tableA.addAll(tableB);
+        tableB.clear();
+        tableView1.setItems(tableA);
+        tableView2.setItems(tableB);
+    }
 
     private void open(int tableNumber, String collectionRoot) {
         if(collectionRoot==null){
