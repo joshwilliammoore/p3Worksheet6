@@ -49,7 +49,16 @@ public interface DuplicateFinder {
     default  Set<MediaItem> getMissingItems        (Set<MediaItem> myCollection, 
                                                     Set<MediaItem> yourCollection)
     {
-        throw new UnsupportedOperationException("Not written yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not written yet."); //To change body of generated methods, choose Tools | Templates.
+        Set<MediaItem> result = new HashSet<>();
+        for(MediaItem item : myCollection){
+            if(getDuplicates(yourCollection,item).size()==0){
+                if(getDuplicates(result,item).size()==0){
+                    result.add(item);
+                }
+            }
+        }
+        return result;
     }
             
 }
