@@ -50,7 +50,8 @@
                     <MenuItem text="Open Collection A" onAction="#openAIn1" />
                     <MenuItem text="Open Collection B" onAction="#openBIn1" />
                     <MenuItem text="Open Collections A and B" onAction="#openABIn1" />
-                    <MenuItem text="Add Table 2 to 1" onAction="#addTable2To1" />
+                    <MenuItem text="Insert Table 2 contents into Table 1" onAction="#addTable2To1" />
+                    <MenuItem text="Show Table 2 items missing from Table 1" onAction="#missingItems" />
                     <SeparatorMenuItem  />
                     <MenuItem text="Exit"/>
                     
@@ -63,7 +64,7 @@
                     <MenuItem text="Open Collection A" onAction="#openAIn2" />
                     <MenuItem text="Open Collection B" onAction="#openBIn2" />
                     <MenuItem text="Open Collections A and B" onAction="#openABIn2" />
-                    <MenuItem text="Add Table 1 to 2" onAction="#addTable1To2" />
+                    <MenuItem text="Insert Table 1 contents into Table 2" onAction="#addTable1To2" />
                 </items>
             </Menu>
             <Menu text="Edit">
