@@ -5,6 +5,7 @@ import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -16,6 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.stage.DirectoryChooser;
+import ku.piii2019.bl1.DuplicateFindFromID3;
+import ku.piii2019.bl1.DuplicateFinder;
 import ku.piii2019.bl1.FileService;
 import ku.piii2019.bl1.FileServiceImpl;
 import ku.piii2019.bl1.MediaInfoSource;
@@ -106,7 +109,7 @@ public class FXMLController implements Initializable {
         ObservableList<MediaItem> tableA = tableView1.getItems();
         ObservableList<MediaItem> tableB = tableView2.getItems();
         tableB.addAll(tableA);
-        //tableA.clear();
+        tableA.clear();
         tableView2.setItems(tableA);
         tableView1.setItems(tableB);
         
@@ -116,9 +119,21 @@ public class FXMLController implements Initializable {
         ObservableList<MediaItem> tableA = tableView1.getItems();
         ObservableList<MediaItem> tableB = tableView2.getItems();
         tableA.addAll(tableB);
-        //tableB.clear();
+        tableB.clear();
         tableView2.setItems(tableA);
         tableView1.setItems(tableB);
+    }
+    
+    @FXML
+    private void missingItems(ActionEvent event){
+        List<MediaItem> tableA = tableView1.getItems();
+        List<MediaItem> tableB = tableView2.getItems();
+        DuplicateFinder finder = new DuplicateFindFromID3();
+        Set<MediaItem> a = new HashSet<>(tableA);
+        Set<MediaItem> b = new HashSet<>(tableB);
+        ObservableList<MediaItem> result =
+                FXCollections.observableArrayList(finder.getMissingItems(a, b));
+        tableView2.setItems(result);
     }
 
     private void open(int tableNumber, String collectionRoot) {
